@@ -1,0 +1,25 @@
+name: dbt_chainlit_app
+version: 1.0.0
+profile: dbt_chainlit_app
+model-paths:
+- models
+analysis-paths:
+- analyses
+test-paths:
+- tests
+seed-paths:
+- seeds
+macro-paths:
+- macros
+snapshot-paths:
+- snapshots
+clean-targets:
+- target
+- dbt_packages
+- models/temp
+models:
+  dbt_chainlit_app:
+    example:
+      +materialized: view
+    temp:
+      +materialized: ephemeral
